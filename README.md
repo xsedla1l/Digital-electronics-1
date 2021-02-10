@@ -4,7 +4,6 @@
 
  [I'm an inline-style link](https://www.google.com)
  
- 
  ``` vhdl
  moj kod skuska
- ´´´
+´´´
