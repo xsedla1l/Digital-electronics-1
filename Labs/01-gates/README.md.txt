@@ -1,5 +1,5 @@
 # lab 01-gates
-
+## Table
 | **c** | **b** |**a** | **f(c,b,a)** |
 | :-: | :-: | :-: | :-: |
 | 0 | 0 | 0 | 1 |
@@ -10,6 +10,7 @@
 | 1 | 0 | 1 | 1 |
 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 0 |
+
 
 
 ![De Morgan's low simulation](Images/01-gates1.png)
