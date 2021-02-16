@@ -54,7 +54,7 @@ end architecture dataflow;
 ![alt text](Images/O1-gates1.png)
 
 ## Link
-[EDA playground link](https://www.edaplayground.com/x/qJja)
+[Link](https://www.edaplayground.com/x/qJja)
 
 
 # Distributive law
@@ -107,7 +107,7 @@ end architecture dataflow;
 ![alt text](Images/O1-gates2.png)
 
 ## Link
-[EDA playground link](https://www.edaplayground.com/x/qJja)
+[Link](https://www.edaplayground.com/x/qJja)
 
 
 
