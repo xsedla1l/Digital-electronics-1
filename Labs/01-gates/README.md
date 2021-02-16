@@ -51,7 +51,7 @@ end architecture dataflow;
 ```
 
 ## Obrázok
-![alt text](Images/O1-gates1.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/01-gates/Images/01-gates1.png)
 
 ## Link
 [Link](https://www.edaplayground.com/x/qJja)
@@ -104,7 +104,7 @@ end architecture dataflow;
 ```
 
 ## Obrázok
-![alt text](Images/O1-gates2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/01-gates/Images/01-gates2.png)
 
 ## Link
 [Link](https://www.edaplayground.com/x/qJja)
