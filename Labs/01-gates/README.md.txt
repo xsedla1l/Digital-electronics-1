@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # lab 01-gates 
 # De Morgan's Laws
 ## Tabuľka
@@ -111,21 +110,3 @@ end architecture dataflow;
 
 
 
-=======
-# lab 01-gates
-## Table
-| **c** | **b** |**a** | **f(c,b,a)** |
-| :-: | :-: | :-: | :-: |
-| 0 | 0 | 0 | 1 |
-| 0 | 0 | 1 | 1 |
-| 0 | 1 | 0 | 0 |
-| 0 | 1 | 1 | 0 |
-| 1 | 0 | 0 | 0 |
-| 1 | 0 | 1 | 1 |
-| 1 | 1 | 0 | 0 |
-| 1 | 1 | 1 | 0 |
-
-
-
-![De Morgan's low simulation](Images/01-gates1.png)
->>>>>>> 7631c17faa5824863d37d0c362319d9b876892ee
