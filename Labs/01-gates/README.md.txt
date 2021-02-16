@@ -12,4 +12,4 @@
 | 1 | 1 | 1 | 0 |
 
 
-![De Morgan's simulation 01](Images/01-gates1.png)
+![De Morgan's low simulation](Images/01-gates1.png)
