@@ -24,7 +24,7 @@
 | 15 | 1 1 | 1 1 | 0 | **1** | 0 |
 
 # 2)
-## Karnaugh maps
+## ***Karnaugh maps***
 
 ### *The K-map for the "equals" function*
 |           |           |         |  **A1,A0**  |           |           |
@@ -37,7 +37,7 @@
 
 
 
-### ~~The K-map for the "graeter than" function~~
+### *The K-map for the "graeter than" function*
 |           |           |         |  **A1,A0**  |           |           |
 | :-:       | :-:       | :-:     | :-:         | :-:       | :-:       | 
 |           |           | **0 0** | **0 1**     | **1 1**   | **1 0**   | 
@@ -50,7 +50,7 @@
 #### GreaterSoP = B1./A1 + /A1./A0.B0 + /A0.B1.B0
 
 
-### ~~The K-map for the "less than" function~~
+### *The K-map for the "less than" function*
 |           |           |         |  **A1,A0**  |           |           |
 | :-:       | :-:       | :-:     | :-:         | :-:       | :-:       | 
 |           |           | **0 0** | **0 1**     | **1 1**   | **1 0**   | 
@@ -64,7 +64,7 @@
 
 # 3)
 
-### ~~VHDL Code (design.vhd)~~
+### ***VHDL Code (design.vhd)***
 
 ```VHDL
 library ieee;
@@ -101,7 +101,7 @@ end architecture Behavioral;
 
 ```
 
-### ~~VHDL Code (testbench.vhd)~~
+### ***VHDL Code (testbench.vhd)***
 
 ```VHDL
 library ieee;
@@ -165,3 +165,4 @@ begin
 end architecture testbench;
 
 ```
+### Simulator console output 
