@@ -173,5 +173,5 @@ end architecture testbench;
 ### Reported error:
 ![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/01-gates/Images/01-gates2.png)
 
-### *** Link to EDA Playground***
+### ***Link to EDA Playground***
 [EDA Playground](https://www.edaplayground.com/x/8QkY)
