@@ -47,7 +47,8 @@
 |           | ***1 0***   | **1**        | **1**            | 0         | 0     |
 
 #### Simplified SoP form of the "greater than" function : 
-#### GreaterSoP = B1./A1 + /A1./A0.B0 + /A0.B1.B0
+#### GreaterSoP = B1./A1 + /A1./A0.B0 + /A0.B1.B0 
+###### '/' -> not 
 
 
 ### *The K-map for the "less than" function*
@@ -61,6 +62,7 @@
 
 #### Simplified PoS form of the "less than" function : 
 #### LessPoS = (A1+A0).(/B1+/B2).(A1+/B1).(A1+/B0).(A0+/B1)
+###### '/' -> not 
 
 # 3)
 
@@ -165,4 +167,11 @@ begin
 end architecture testbench;
 
 ```
-### Simulator console output 
+### Simulator console output:
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/01-gates/Images/01-gates2.png)
+
+### Reported error:
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/01-gates/Images/01-gates2.png)
+
+### *** Link to EDA Playground***
+[EDA Playground](https://www.edaplayground.com/x/8QkY)
