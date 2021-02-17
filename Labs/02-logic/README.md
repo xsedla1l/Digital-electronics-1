@@ -26,7 +26,7 @@
 # 2)
 ## Karnaugh maps
 
-### ~~The K-map for the "equals" function~~
+### *The K-map for the "equals" function*
 |           |           |         |  **A1,A0**  |           |           |
 | :-:       | :-:       | :-:     | :-:         | :-:       | :-:       | 
 |           |           | **0 0** | **0 1**     | **1 1**   | **1 0**   | 
