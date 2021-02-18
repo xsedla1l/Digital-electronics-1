@@ -2,7 +2,7 @@
 
 # 1)
 
-## Truth table
+## ***Truth table***
 
 | **Dec. equivalent** | **B[1:0]** | **A[1:0]** | **B is greater than A** | **B equals A** | **B is less than A** |
 | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -95,7 +95,7 @@ begin
     
 
 
-    -- WRITE "EQUALS" AND "LESS" ASSIGNMENTS HERE
+    
 
 
 end architecture Behavioral;
@@ -248,10 +248,10 @@ end architecture testbench;
 ```
 
 ### Simulator console output:
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/01-gates/Images/01-gates2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
 
 ### Reported error:
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/01-gates/Images/01-gates2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic1.png)
 
 ### Link to EDA Playground
 [EDA Playground](https://www.edaplayground.com/x/8QkY)
