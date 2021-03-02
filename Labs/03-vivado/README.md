@@ -85,23 +85,23 @@ p_stimulus : process
 ```
 
 ### Screenshot
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/03-vivado/Images/image1.png)
 
 # 3) 
 ### Creating a project
 #### Click on "Create Project"
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/03-vivado/Images/image2.png)
 
 #### Choose the project name and the project location
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/03-vivado/Images/image3.png)
 
 ### Choose "RTL Project"
 
 #### Create File in VHDL
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/03-vivado/Images/image4.png)
 
 #### Choose a "Nexys A7-50T"
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/03-vivado/Images/image5.png)
 
 #### And click on "Finish"
 
