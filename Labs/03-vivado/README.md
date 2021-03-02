@@ -100,16 +100,17 @@ p_stimulus : process
 #### Create File in VHDL
 ![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/03-vivado/Images/image4.png)
 
+#### Choose a "Nexys A7-50T"
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/03-vivado/Images/image5.png)
+
 ### OR
 #### Same way we can create "simulation source"
 ![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/03-vivado/Images/image6.png)
 
-#### Choose a "Nexys A7-50T"
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/03-vivado/Images/image5.png)
-
 #### And click on "Finish"
 
-### Starting the simulation -> click on : Flow/Run Simulation/Run Behavioral Simulation
+### Starting the simulation 
+#### Click on : Flow/Run Simulation/Run Behavioral Simulation
 
 
 
