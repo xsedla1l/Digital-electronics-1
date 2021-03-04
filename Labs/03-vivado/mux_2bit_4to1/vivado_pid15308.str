@@ -180,3 +180,13 @@ typeControlKey((HResource) null, "th_mux_2bit_4to1.vhd", 'c'); // bP
 // HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/4/21, 8:34:42 AM CET
 // HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 9:04:42 AM CET
 // HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 9:34:42 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 10:04:43 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 10:34:43 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 11:04:43 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 11:34:43 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 12:04:44 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/4/21, 12:34:44 PM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  311450 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 1:04:48 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/4/21, 1:34:49 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/4/21, 2:04:49 PM CET
