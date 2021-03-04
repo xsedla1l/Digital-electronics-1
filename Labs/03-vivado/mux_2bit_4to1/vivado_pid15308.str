@@ -1,0 +1,182 @@
+/*
+
+Xilinx Vivado v2020.2 (64-bit) [Major: 2020, Minor: 2]
+SW Build: 3064766 on Wed Nov 18 09:12:45 MST 2020
+IP Build: 3064653 on Wed Nov 18 14:17:31 MST 2020
+
+Process ID (PID): 15308
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Wed Mar 03 13:42:20 CET 2021
+Time zone: 	Central European Standard Time (Europe/Prague)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 150
+Available screens: 2
+Default font: family=Segoe UI,name=Segoe UI,style=plain,size=18
+Scale size: 27
+
+Java version: 	11.0.2 64-bit
+Java home: 	C:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2
+Java executable location: 	C:/Xilinx/Vivado/2020.2/tps/win64/jre11.0.2/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	marek
+User home directory: C:/Users/marek
+User working directory: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1
+User country: 	SK
+User language: 	sk
+User locale: 	sk_SK
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2020.2
+RDI_DATADIR: C:/Xilinx/Vivado/2020.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2020.2/bin
+
+Vivado preferences file location: C:/Users/marek/AppData/Roaming/Xilinx/Vivado/2020.2/vivado.xml
+Vivado preferences directory: C:/Users/marek/AppData/Roaming/Xilinx/Vivado/2020.2/
+Vivado layouts directory: C:/Users/marek/AppData/Roaming/Xilinx/Vivado/2020.2/data/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2020.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1/vivado.log
+Vivado journal file location: 	C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1/vivado.jou
+Engine tmp dir: 	C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1/.Xil/Vivado-15308-LAPTOP-DP62DEB3
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2020.2/ids_lite/ISE
+XILINX_HLS: C:/Xilinx/Vitis_HLS/2020.2
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2020.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2020.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2020.2
+
+
+GUI allocated memory:	167 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,028 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\marek\Desktop\skola\4semester\DE1\Digital-electronics-1\Labs\03-vivado\mux_2bit_4to1\mux_2bit_4to1.xpr. Version: Vivado v2020.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1/mux_2bit_4to1.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1' 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1/mux_2bit_4to1.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1' INFO: [Project 1-313] Project file moved from 'C:/Users/marek/Desktop/kola/4. semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 113 MB (+115977kb) [00:00:10]
+// [Engine Memory]: 1,028 MB (+925944kb) [00:00:10]
+// [GUI Memory]: 132 MB (+13974kb) [00:00:11]
+// WARNING: HEventQueue.dispatchEvent() is taking  3328 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 62 MB. Current time: 3/3/21, 1:42:20 PM CET
+// Project name: mux_2bit_4to1; location: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/03-vivado/mux_2bit_4to1; part: xc7k70tfbv676-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 1019.070 ; gain = 0.000 
+dismissDialog("Open Project"); // bz
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true); // D - Node
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true, false, false, false, false, true); // D - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources]", 0, true, false, false, false, false, true); // D - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mux_2bit_4to1(Behavioral) (mux_2bit_4to1.vhd)]", 1, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mux_2bit_4to1(Behavioral) (mux_2bit_4to1.vhd)]", 1, false, false, false, false, false, true); // D - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources]", 3, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 4, true, false, false, false, false, true); // D - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1]", 4, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, th_mux_2bit_4to1(testbench) (th_mux_2bit_4to1.vhd)]", 5, true, false, false, false, false, true); // D - Double Click - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, th_mux_2bit_4to1(testbench) (th_mux_2bit_4to1.vhd)]", 5, true); // D - Node
+// [GUI Memory]: 140 MB (+1918kb) [00:00:30]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, th_mux_2bit_4to1(testbench) (th_mux_2bit_4to1.vhd), uut_mux_2bit_4to1 : mux_2bit_4to1(Behavioral) (mux_2bit_4to1.vhd)]", 6, false, false, false, false, false, true); // D - Double Click
+// Elapsed time: 33 seconds
+selectCodeEditor("th_mux_2bit_4to1.vhd", 42, 167); // bP
+typeControlKey((HResource) null, "th_mux_2bit_4to1.vhd", 'c'); // bP
+// Elapsed time: 224 seconds
+selectCodeEditor("th_mux_2bit_4to1.vhd", 248, 280); // bP
+selectCodeEditor("th_mux_2bit_4to1.vhd", 36, 113); // bP
+typeControlKey((HResource) null, "th_mux_2bit_4to1.vhd", 'c'); // bP
+// Elapsed time: 148 seconds
+selectCodeEditor("th_mux_2bit_4to1.vhd", 248, 338); // bP
+// Elapsed time: 21 seconds
+selectCodeEditor("th_mux_2bit_4to1.vhd", 21, 231); // bP
+selectCodeEditor("th_mux_2bit_4to1.vhd", 331, 338); // bP
+selectCodeEditor("th_mux_2bit_4to1.vhd", 334, 309); // bP
+selectCodeEditor("th_mux_2bit_4to1.vhd", 24, 244); // bP
+selectCodeEditor("th_mux_2bit_4to1.vhd", 30, 244); // bP
+selectCodeEditor("th_mux_2bit_4to1.vhd", 319, 321); // bP
+selectCodeEditor("th_mux_2bit_4to1.vhd", 319, 321); // bP
+selectCodeEditor("th_mux_2bit_4to1.vhd", 30, 150); // bP
+selectCodeEditor("th_mux_2bit_4to1.vhd", 51, 164); // bP
+typeControlKey((HResource) null, "th_mux_2bit_4to1.vhd", 'c'); // bP
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 81 MB. Current time: 3/3/21, 2:12:23 PM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  1120992 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1726 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 73 MB. Current time: 3/3/21, 3:00:45 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/3/21, 3:30:43 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/3/21, 4:00:43 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/3/21, 4:30:44 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/3/21, 5:00:44 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/3/21, 5:30:44 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/3/21, 6:00:44 PM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  961146 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/3/21, 6:46:36 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/3/21, 7:16:36 PM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  143196 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/3/21, 7:46:37 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/3/21, 8:16:37 PM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  712267 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/3/21, 8:46:41 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/3/21, 9:16:41 PM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/3/21, 9:46:41 PM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  1687 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  13683316 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1486 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 1:40:19 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/4/21, 2:10:17 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 2:40:17 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/4/21, 3:10:18 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 3:40:18 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/4/21, 4:10:18 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/4/21, 4:40:18 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 5:10:19 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 5:40:19 AM CET
+// WARNING: HEventQueue.dispatchEvent() is taking  10461822 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 71 MB. Current time: 3/4/21, 8:34:42 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 9:04:42 AM CET
+// HMemoryUtils.trashcanNow. Engine heap size: 1,028 MB. GUI used memory: 72 MB. Current time: 3/4/21, 9:34:42 AM CET

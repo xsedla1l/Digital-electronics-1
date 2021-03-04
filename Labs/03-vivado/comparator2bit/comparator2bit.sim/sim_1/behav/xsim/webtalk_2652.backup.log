@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Mar  2 12:22:29 2021
+# Process ID: 2652
+# Current directory: C:/Users/marek/Desktop/kola/4. semester/DE1/Digital-electronics-1/Labs/03-vivado/comparator2bit/comparator2bit.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/marek/Desktop/kola/4. semester/DE1/Digital-electronics-1/Labs/03-vivado/comparator2bit/comparator2bit.sim/sim_1/behav/xsim/xsim.dir/comparator_2bit_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/marek/Desktop/kola/4. semester/DE1/Digital-electronics-1/Labs/03-vivado/comparator2bit/comparator2bit.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/marek/Desktop/kola/4. semester/DE1/Digital-electronics-1/Labs/03-vivado/comparator2bit/comparator2bit.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/marek/Desktop/kola/4. -notrace
+couldn't read file "C:/Users/marek/Desktop/kola/4.": permission denied
+INFO: [Common 17-206] Exiting Webtalk at Tue Mar  2 12:22:29 2021...
