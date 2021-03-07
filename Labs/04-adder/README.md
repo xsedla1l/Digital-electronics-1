@@ -89,7 +89,7 @@ report "Stimulus process started" severity note;
 ```
 
 ### C) Screenshot: 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/04-adder/Images/image1.png)
 
 
 ### D) 7-segment module instantiation:
@@ -164,6 +164,6 @@ hex2seg : entity work.hex_7seg
 
 ### B) Screenshot
 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/04-adder/Images/image2.png)
 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/04-adder/Images/image3.png)
