@@ -1,8 +1,8 @@
 # 1 
-## A) In this position the button is open. The input (for example P17) is log 0 (0V / GND). If we press the button bring to input P17 log 1 (3,3V). 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
-
-## B) 
+## A) Figure with connection of push buttons on Nexys A7 board 
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/05-counter/Images/image1.png)
+#### In this position the button is open. The input (for example P17) is log 0 (0V / GND). If we press the button bring to input P17 log 1 (3,3V). 
+## B) Table with calculated values
  | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** |
    | :-: | :-: | :-: | :-: |
    | 2&nbsp;ms      | 200 000       | `x"3_0d40"`     | `b"0011_0000_1101_0100_0000"` |
@@ -71,12 +71,12 @@ p_stimulus : process
     end process p_stimulus;
 ```
 
-## C) Screenshot
+## C) Screenshot with simulated
 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/05-counter/Images/image2.png)
 
 # 3
-## A) 
+## A) Listing of VHDL code from source file top.vhd
 ```VHDL
      clk_en0 : entity work.clock_enable
         generic map(
