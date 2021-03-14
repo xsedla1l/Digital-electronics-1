@@ -123,4 +123,4 @@ p_stimulus : process
 ```
 
 ## B) Image of the top layer including both counters
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/05-counter/Images/image3.jpg)
