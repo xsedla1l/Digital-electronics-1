@@ -2,7 +2,7 @@
 
 # 1) Timing diagram figure for displaying value 3.142
 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/06-display_driver/images/image1.png)
 
 # 2)
 ## A) Listing of VHDL code of the process
@@ -164,11 +164,11 @@ end architecture testbench;
 
 ## C) Screenshot with simulated time waveforms
 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/06-display_driver/images/image2.png)
 
 #### With reset
 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/06-display_driver/images/image3.png)
 
 ## D) Listing of VHDL architecture of the top layer
 
@@ -226,6 +226,8 @@ end architecture Behavioral;
 ```
 
 
-# 3)
+# 3) Image of the driver schematic
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+
 
 
