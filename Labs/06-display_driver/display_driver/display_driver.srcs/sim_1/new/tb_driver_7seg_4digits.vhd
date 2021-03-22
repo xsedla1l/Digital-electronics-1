@@ -99,7 +99,7 @@ begin
             
           
          
-                    s_data3_i <= "0011";
+                    s_data3_i <= "0011";   -- Number 3.142
                     s_data2_i <= "0001";
                     s_data1_i <= "0100";
                     s_data0_i <= "0010";
@@ -107,7 +107,7 @@ begin
                     
                     wait for 425 ns;
                     
-                    s_data3_i <= "0001";
+                    s_data3_i <= "0001";   -- Number 19.03
                     s_data2_i <= "1001";
                     s_data1_i <= "0000";
                     s_data0_i <= "0011";
