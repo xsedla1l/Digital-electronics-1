@@ -227,7 +227,7 @@ end architecture Behavioral;
 
 
 # 3) Image of the driver schematic
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/06-display_driver/images/image4.png)
 
 
 
