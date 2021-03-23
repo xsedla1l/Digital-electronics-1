@@ -87,9 +87,9 @@ begin
 
         -- Reset deactivated
         s_reset <= '0';
-        wait for 53 ns;
-        assert(seg_o = "0000011")
-        report "Time for 0011 is wrong" severity error;
+        wait for 27 ns;
+        assert(s_seg_o = "0000011")
+        report "In 100ns is wrong value of s_dig_o. Corect value is supose to be 0010" severity error;
         
 
         wait;
@@ -112,6 +112,7 @@ begin
                     
                     wait for 425 ns;
                     
+                           
                     s_data3_i <= "0001";   -- Number 19.03
                     s_data2_i <= "1001";
                     s_data1_i <= "0000";
@@ -121,5 +122,13 @@ begin
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
+    p_assert : process
+    begin
+       wait for 460 ns;
+       
+        assert(s_seg_o = "0000001")
+        report "In 460ns is wrong value of s_dig_o. Corect value is supose to be 0001" severity error;
+       
+    end process p_assert;
 
 end architecture testbench;
