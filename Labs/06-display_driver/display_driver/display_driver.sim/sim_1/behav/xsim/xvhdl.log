@@ -1,2 +1,5 @@
 INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/06-display_driver/display_driver/display_driver.srcs/sim_1/new/tb_driver_7seg_4digits.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'tb_driver_7seg_4digits'
+ERROR: [VRFC 10-2989] 'seg_o' is not declared [C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/06-display_driver/display_driver/display_driver.srcs/sim_1/new/tb_driver_7seg_4digits.vhd:91]
+ERROR: [VRFC 10-3782] unit 'testbench' ignored due to previous errors [C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/06-display_driver/display_driver/display_driver.srcs/sim_1/new/tb_driver_7seg_4digits.vhd:25]
+INFO: [VRFC 10-3070] VHDL file 'C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/06-display_driver/display_driver/display_driver.srcs/sim_1/new/tb_driver_7seg_4digits.vhd' ignored due to errors

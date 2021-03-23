@@ -78,7 +78,8 @@ begin
         p_reset_gen : process
     begin
         s_reset <= '0';
-        wait for 10 ns;
+        wait for 20 ns;
+        
         
         -- Reset activated
         s_reset <= '1';
@@ -86,6 +87,10 @@ begin
 
         -- Reset deactivated
         s_reset <= '0';
+        wait for 53 ns;
+        assert(seg_o = "0000011")
+        report "Time for 0011 is wrong" severity error;
+        
 
         wait;
     end process p_reset_gen;
@@ -118,4 +123,3 @@ begin
     end process p_stimulus;
 
 end architecture testbench;
-
