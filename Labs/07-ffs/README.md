@@ -39,231 +39,145 @@
 ## q_{n+1}^T =&\\
 
 # 2)
-## ***Karnaugh maps***
-
-### *The K-map for the "equals" function*
-|           |           |         |  **A1,A0**  |           |           |
-| :-:       | :-:       | :-:     | :-:         | :-:       | :-:       | 
-|           |           | ***0 0*** | ***0 1***     | ***1 1***   | ***1 0***   | 
-|           | ***0 0***  | **1**   | 0           | 0         | 0         | 
-| **B1,B0** |  ***0 1***  | 0       | **1**       | 0         |  0        |
-|           | ***1 1***   | 0       | 0           | **1**     | 0         |
-|           | ***1 0***   | 0       | 0           | 0         | **1**     |
-
-
-
-### *The K-map for the "graeter than" function*
-|           |           |         |  **A1,A0**  |           |           |
-| :-:       | :-:       | :-:     | :-:         | :-:       | :-:       | 
-|           |           | ***0 0*** | ***0 1***     | ***1 1***   | ***1 0***   | 
-|           | ***0 0***   | 0   | 0           | 0         | 0         | 
-| **B1,B0** |  ***0 1***  | **1**        | 0       | 0         |  0        |
-|           | ***1 1***   | **1**        | **1**            | 0    | **1**         |
-|           | ***1 0***   | **1**        | **1**            | 0         | 0     |
-
-#### Simplified SoP form of the "greater than" function : 
-#### GreaterSoP = B1./A1 + /A1./A0.B0 + /A0.B1.B0 
-##### '/' -> negation 
-
-
-### *The K-map for the "less than" function*
-|           |           |         |  **A1,A0**  |           |           |
-| :-:       | :-:       | :-:     | :-:         | :-:       | :-:       | 
-|           |           | ***0 0*** | ***0 1***     | ***1 1***   | ***1 0***   | 
-|           | ***0 0***   | **0**   | 1           | 1         | 1         | 
-| **B1,B0** |  ***0 1***  | **0**       | **0**       | 1         |  1        |
-|           | ***1 1***   | **0**       | **0**            | **0**     | **0**          |
-|           | ***1 0***   | **0**       | **0**            | 1         | **0**     |
-
-#### Simplified PoS form of the "less than" function : 
-#### LessPoS = (A1+A0).(/B1+/B2).(A1+/B1).(A1+/B0).(A0+/B1)
-##### '/' -> negation 
-
-# 3)
-
-### ***VHDL Code (design.vhd)***
+## A) VHDL code listing of the process p_d_latch 
 
 ```VHDL
-library ieee;
-use ieee.std_logic_1164.all;
-
-
-entity comparator_4bit is
-    port(
-        a_i           : in  std_logic_vector(4 - 1 downto 0);
-		b_i           : in  std_logic_vector(4 - 1 downto 0);
-
-        							-- COMPLETE ENTITY DECLARATION
-		B_greater_A_o : out std_logic;
-        B_equals_A_o  : out std_logic;
-
-        B_less_A_o    : out std_logic       -- B is less than A
-    );
-end entity comparator_4bit;
-
-
-architecture Behavioral of comparator_4bit is
-begin
-    B_greater_A_o 	 <= '1' when (b_i > a_i) else '0';
-    B_equals_A_o 	 <= '1' when (b_i = a_i) else '0';
-    B_less_A_o		 <= '1' when (b_i < a_i) else '0';
-    
-
-
-    
-
-
-end architecture Behavioral;
-
-
+p_d_latch : process (d, arst, en)
+        begin 
+            if (arst = '1') then
+                q     <= '0';
+                q_bar <= '1';
+            elsif (en = '1') then
+                q     <= d;
+                q_bar <= not d;  
+            
+            end if;
+        end process p_d_latch;
 ```
 
-### ***VHDL Code (testbench.vhd)***
+## B) Listing of VHDL reset and stimulus processes from the testbench
 
 ```VHDL
-library ieee;
-use ieee.std_logic_1164.all;
-
-------------------------------------------------------------------------
--- Entity declaration for testbench
-------------------------------------------------------------------------
-entity tb_comparator_4bit is
-    -- Entity of testbench is always empty
-end entity tb_comparator_4bit;
-
------------------------------------------------------------------------
--- Architecture body for testbench
-------------------------------------------------------------------------
-architecture testbench of tb_comparator_4bit is
-
-    -- Local signals
-    signal s_a       : std_logic_vector(4 - 1 downto 0);
-    signal s_b       : std_logic_vector(4 - 1 downto 0);
-    signal s_B_greater_A : std_logic;
-    signal s_B_equals_A  : std_logic;
-    signal s_B_less_A    : std_logic;
-
-begin
-    -- Connecting testbench signals with comparator_2bit entity (Unit Under Test)
-    uut_comparator_4bit : entity work.comparator_4bit
-        port map(
-            a_i           => s_a,
-            b_i           => s_b,
-            B_greater_A_o => s_B_greater_A,
-            B_equals_A_o  => s_B_equals_A,
-            B_less_A_o    => s_B_less_A
-        );
-
-    --------------------------------------------------------------------
-    -- Data generation process
-    --------------------------------------------------------------------
-    p_stimulus : process
+ p_arst_gen : process
     begin
-        -- Report a note at the begining of stimulus process
+        s_arst <= '0';
+        wait for 10 ns;        
+        
+        -- arst activated
+        s_arst <= '1';
+        wait for 10 ns;
+
+        -- arst deactivated
+        s_arst <= '0';
+        wait for 200 ns;
+        
+        s_arst <= '1';         
+
+        wait;
+    end process p_arst_gen;
+
+         p_stimulus : process
+    begin
         report "Stimulus process started" severity note;
-        
-        
-        
-        -- First test values
-        s_b <= "0000"; s_a <= "0000"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '0') and (s_B_equals_A = '1') and (s_B_less_A = '0'))
-        -- If false, then report an error
-      
-        report "Test failed for input combination: 0000, 0000" severity error;
-        
-        
-        -- Second test values
-        s_b <= "0000"; s_a <= "0001"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-        -- If false, then report an error
-      
-        report "Test failed for input combination: 0000, 0001" severity error;
-        
-        
-        -- Third test values
-        s_b <= "0000"; s_a <= "0010"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-        -- If false, then report an error
-      
-        report "Test failed for input combination: 0000, 0010" severity error;
-        
-        
-        -- Fourth test values
-        s_b <= "0000"; s_a <= "0100"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-        -- If false, then report an error
-      
-        report "Test failed for input combination: 0000, 0100" severity error;
-        
-        
-        -- Fifth test values
-        s_b <= "1000"; s_a <= "0000"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-        -- If false, then report an error
-      
-        report "Test failed for input combination: 1000, 0000" severity error;
-        
-        
-        -- Sixth test values
-        s_b <= "1000"; s_a <= "0100"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-        -- If false, then report an error
-      
-        report "Test failed for input combination: 1000, 0100" severity error;
-        
-        
-        -- Seventh test values
-        s_b <= "0010"; s_a <= "0100"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '0') and (s_B_equals_A = '0') and (s_B_less_A = '1'))
-        -- If false, then report an error
-      
-        report "Test failed for input combination: 0010, 0100" severity error;
-        
-        
-        -- Eighth test values
-        s_b <= "1000"; s_a <= "1000"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '0') and (s_B_equals_A = '1') and (s_B_less_A = '0'))
-        -- If false, then report an error
-      
-        report "Test failed for input combination: 1000, 1000" severity error;
-        
-        
-        -- Ninth test values
-        s_b <= "1100"; s_a <= "0100"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '1') and (s_B_equals_A = '0') and (s_B_less_A = '0'))
-        -- If false, then report an error
-      
-        report "Test failed for input combination: 1100, 0100" severity error;
-        
-        
-         -- Tenth test values
-        s_b <= "0110"; s_a <= "0011"; wait for 100 ns;
-                -- Expected output
-        assert ((s_B_greater_A = '1') and (s_B_equals_A = '1') and (s_B_less_A = '0'))
-        -- If false, then report an error
-        report "Test failed for input combination: 0110, 0011" severity error;
-
-
-        -- Report a note at the end of stimulus process
+            
+          s_en <= '0';
+          s_d <= '0';         
+         
+          wait for 6 ns;          
+          s_d   <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 8 ns;
+           s_d  <= '1';
+          wait for 6 ns;
+          s_d   <= '0';
+          wait for 9 ns;
+          s_d   <= '1';
+          wait for 4 ns;
+          s_d   <= '0';
+          wait for 5 ns;          
+          
+          s_en  <= '1';
+          wait for 6 ns;          
+          s_d   <= '1';
+          wait for 3 ns;
+          s_d   <= '0';
+          wait for 10 ns;
+          s_d   <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 6 ns;
+          s_d  <= '1';
+          wait for 25 ns;
+          s_d   <= '0';
+          wait for 15 ns;
+          s_en  <= '0';
+          wait for 4 ns;
+          s_d  <= '1';
+          wait for 16 ns;
+          
+          s_en  <= '1';
+          wait for 6 ns;          
+          s_d   <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 5 ns;
+           s_d  <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 5 ns;
+           s_d  <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 17 ns;
+          
+          s_d   <= '1';
+          wait for 10 ns;
+          s_en  <= '0';
+          wait for 10 ns;
+          s_d   <= '0';          
+          wait for 6 ns;          
+          s_d   <= '1';
+          wait for 15 ns;
+          s_d   <= '0';
+          wait for 6 ns;
+           s_d  <= '1';
+           wait for 5 ns;
+          s_en  <= '1';
+          wait for 3 ns;
+          s_d   <= '0';
+          wait for 5 ns;
+           s_d  <= '1';
+          wait for 8 ns;
+          s_d   <= '0';
+          wait for 15 ns;
+         
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
-
-end architecture testbench;
-
+    
+   p_assert : process
+    begin
+      wait for 80 ns;
+              
+        -- assert in 80 ns
+        assert(s_q = '1' and s_q_bar = '0')
+        report "Error - conditions in 80 ns are not met" severity error;
+        
+      wait for 45 ns;
+         -- assert in 125 ns
+        assert(s_q = '0' and s_q_bar = '1')
+        report "Error - conditions in 125 ns are not met" severity error;
+       
+    end process p_assert;
+          
 ```
 
-### Simulator console output:
+## C)  Screenshot
 ![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic2.png)
+
+# 3) 
+
 
 ### Reported error:
 ![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic1.png)

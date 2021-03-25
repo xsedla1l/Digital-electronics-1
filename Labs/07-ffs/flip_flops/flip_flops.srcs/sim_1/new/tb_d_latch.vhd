@@ -36,7 +36,7 @@ entity tb_d_latch is
 end tb_d_latch;
 
 architecture Behavioral of tb_d_latch is
-           signal s_en   : STD_LOGIC;
+           signal s_en       : STD_LOGIC;
            signal s_d        : STD_LOGIC;
            signal s_arst     : STD_LOGIC;
            signal s_q        : STD_LOGIC;
@@ -44,45 +44,125 @@ architecture Behavioral of tb_d_latch is
 begin
         uut_d_latch : entity work.d_latch
         port map(
-        en       => s_en,
+           en       => s_en,
            d        => s_d,
            arst     => s_arst,
            q        => s_q,
            q_bar    => s_q_bar
         );
         
+        -- arst process
+        p_arst_gen : process
+    begin
+        s_arst <= '0';
+        wait for 10 ns;        
+        
+        -- arst activated
+        s_arst <= '1';
+        wait for 10 ns;
+
+        -- arst deactivated
+        s_arst <= '0';
+        wait for 200 ns;
+        
+        s_arst <= '1';         
+
+        wait;
+    end process p_arst_gen;
+
          p_stimulus : process
     begin
         report "Stimulus process started" severity note;
             
           s_en <= '0';
-          s_d <= '0';
-          s_arst <= '0';
-          wait for 26 ns;
+          s_d <= '0';         
+         
+          wait for 6 ns;          
+          s_d   <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 8 ns;
+           s_d  <= '1';
+          wait for 6 ns;
+          s_d   <= '0';
+          wait for 9 ns;
+          s_d   <= '1';
+          wait for 4 ns;
+          s_d   <= '0';
+          wait for 5 ns;          
           
-          s_d <= '1';
-          wait for 26 ns;
-          s_d <= '0';
-          wait for 26 ns;
-          s_d <= '1';
-          wait for 26 ns;
-           s_d <= '0';
-          wait for 26 ns;
-          s_d <= '1';
-          wait for 26 ns;
+          s_en  <= '1';
+          wait for 6 ns;          
+          s_d   <= '1';
+          wait for 3 ns;
+          s_d   <= '0';
+          wait for 10 ns;
+          s_d   <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 6 ns;
+          s_d  <= '1';
+          wait for 25 ns;
+          s_d   <= '0';
+          wait for 15 ns;
+          s_en  <= '0';
+          wait for 4 ns;
+          s_d  <= '1';
+          wait for 16 ns;
           
-             s_en <= '0';
-          wait for 26 ns;
-          s_d <= '0';
-          wait for 26 ns;
-          s_d <= '1';
-          wait for 26 ns;
-           s_d <= '0';
-          wait for 26 ns;
-          s_en <= '0';
-          wait for 26 ns;
+          s_en  <= '1';
+          wait for 6 ns;          
+          s_d   <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 5 ns;
+           s_d  <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 5 ns;
+           s_d  <= '1';
+          wait for 5 ns;
+          s_d   <= '0';
+          wait for 17 ns;
+          
+          s_d   <= '1';
+          wait for 10 ns;
+          s_en  <= '0';
+          wait for 10 ns;
+          s_d   <= '0';          
+          wait for 6 ns;          
+          s_d   <= '1';
+          wait for 15 ns;
+          s_d   <= '0';
+          wait for 6 ns;
+           s_d  <= '1';
+           wait for 5 ns;
+          s_en  <= '1';
+          wait for 3 ns;
+          s_d   <= '0';
+          wait for 5 ns;
+           s_d  <= '1';
+          wait for 8 ns;
+          s_d   <= '0';
+          wait for 15 ns;
          
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
+    
+   p_assert : process
+    begin
+      wait for 80 ns;
+              
+        -- assert in 80 ns
+        assert(s_q = '1' and s_q_bar = '0')
+        report "Error - conditions in 80 ns are not met" severity error;
+        
+      wait for 45 ns;
+         -- assert in 125 ns
+        assert(s_q = '0' and s_q_bar = '1')
+        report "Error - conditions in 125 ns are not met" severity error;
+       
+    end process p_assert;
+          
 end Behavioral;
