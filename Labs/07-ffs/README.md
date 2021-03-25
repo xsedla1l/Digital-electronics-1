@@ -6,10 +6,10 @@
 
    | **clk** | **d** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](Images/eq_uparrow.png) | 0 | 0 |  |  |
-   | ![rising](Images/eq_uparrow.png) | 0 | 1 |  |  |
-   | ![rising](Images/eq_uparrow.png) | 1 |  |  |  |
-   | ![rising](Images/eq_uparrow.png) | 1 |  |  |  |
+   | up | 0 | 0 |  |  |
+   | up | 0 | 1 |  |  |
+   | up | 1 |  |  |  |
+   | up | 1 |  |  |  |
 
 ## q_{n+1}^D =&~ \\ 
 
@@ -17,9 +17,9 @@
 
  | **clk** | **j** | **k** | **q(n)** | **q(n+1)** | **Comments** |
    | :-: | :-: | :-: | :-: | :-: | :-- |
-   | ![rising](Images/eq_uparrow.png) | 0 | 0 | 0 | 0 | No change |
-   | ![rising](Images/eq_uparrow.png) | 0 | 0 | 1 | 1 | No change |
-   | ![rising](Images/eq_uparrow.png) | 0 |  |  |  |  |
+   | ![rising](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/eq_uparrow.png) | 0 | 0 | 0 | 0 | No change |
+   | ![rising](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/eq_uparrow.png) | 0 | 0 | 1 | 1 | No change |
+   | ![rising](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/eq_uparrow.png) | 0 |  |  |  |  |
    | ![rising](Images/eq_uparrow.png) | 0 |  |  |  |  |
    | ![rising](Images/eq_uparrow.png) | 1 |  |  |  |  |
    | ![rising](Images/eq_uparrow.png) | 1 |  |  |  |  |

@@ -69,19 +69,40 @@ begin
     p_arst_gen : process
     begin
         s_arst <= '0';
-        wait for 53 ns;
-        
+        wait for 53 ns;       
         
         -- arst activated
         s_arst <= '1';
         wait for 15 ns;
 
         -- arst deactivated
-        s_arst <= '0';           
+        s_arst <= '0';         
        
 
         wait;
     end process p_arst_gen;
-
+    
+    p_stimulus : process
+    begin
+        report "Stimulus process started" severity note;
+                 
+          wait for 10 ns;          
+          s_d   <= '1';
+          wait for 10 ns;
+          s_d   <= '0';
+          wait for 10 ns;
+           s_d  <= '1';
+          wait for 10 ns;
+          s_d   <= '0';
+          wait for 10 ns;
+          s_d   <= '1';
+          wait for 10 ns;
+          s_d   <= '0';
+          wait for 10 ns;       
+                          
+                  
+        report "Stimulus process finished" severity note;
+        wait;
+    end process p_stimulus;
 
 end Behavioral;
