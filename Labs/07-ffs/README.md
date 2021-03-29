@@ -589,4 +589,4 @@ p_clk_gen : process
 ![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/image4.png)
 
 # 4) Image of the shift register schematic 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/image0.1.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/IMG_3279.JPG)
