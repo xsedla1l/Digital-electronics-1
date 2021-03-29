@@ -254,7 +254,7 @@ p_clk_gen : process
     end process p_assert;
 ```
 ### Screenshot p_d_ff_arst 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/image1.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/image0.1.png)
 
 ##  2) p_d_ff_rst
 
