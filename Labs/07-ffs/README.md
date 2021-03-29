@@ -254,7 +254,7 @@ p_clk_gen : process
     end process p_assert;
 ```
 ### Screenshot p_d_ff_arst 
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic1.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/image1.png)
 
 ##  2) p_d_ff_rst
 
@@ -358,7 +358,7 @@ p_d_ff_rst : process (clk)
     end process p_assert;
 ```
 ### Screenshot p_d_ff_rst
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic1.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/image2.1.png)
 
 ##  3) p_jk_ff_rst
 
@@ -460,7 +460,7 @@ p_clk_gen : process
     end process p_assert;
 ```
 ### Screenshot p_d_ff_rst
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic1.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/image2.png)
 
 ##  4) p_t_ff_rst
 
@@ -586,4 +586,4 @@ p_clk_gen : process
     end process p_assert;
 ```
 ### Screenshot p_d_ff_rst
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/02-logic/Images02/logic1.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/image4.png)
