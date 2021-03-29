@@ -69,7 +69,7 @@ begin
     p_arst_gen : process
     begin
         s_arst <= '0';
-        wait for 53 ns;       
+        wait for 58 ns;       
         
         -- arst activated
         s_arst <= '1';
@@ -98,11 +98,32 @@ begin
           s_d   <= '1';
           wait for 10 ns;
           s_d   <= '0';
-          wait for 10 ns;       
-                          
-                  
+          wait for 10 ns;
+          s_d   <= '1';
+          wait for 10 ns;
+          s_d   <= '0';
+          wait for 10 ns;
+          s_d   <= '1';
+          wait for 10 ns;                   
+                        
+                 
         report "Stimulus process finished" severity note;
         wait;
     end process p_stimulus;
+    
+    p_assert : process
+    begin
+      wait for 27 ns;
+              
+        -- assert in 27 ns
+        assert(s_q = '0' and s_q_bar = '1')
+        report "Error - conditions in 27 ns are not met" severity error;
+        
+      wait for 53 ns;
+         -- assert in 80 ns
+        assert(s_q = '1' and s_q_bar = '0')
+        report "Error - conditions in 80 ns are not met" severity error;
+       
+    end process p_assert;
 
 end Behavioral;
