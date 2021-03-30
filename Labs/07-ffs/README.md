@@ -592,7 +592,8 @@ p_clk_gen : process
 ![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/07-ffs/image/IMG_3279.JPG)
 ## In the last task I made a mistake naming the INPUTS and OUTPUTS
 ## So this is right names:
-| MY NAMES      | RIGHT NAMES | 
+| **MY NAMES** | **RIGHT NAMES** |
+| :-: | :-: |
 | Data in       | SW       |
 | CLK           | BTNU     | 
 | RST           | BTNC     |
