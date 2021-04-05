@@ -88,11 +88,11 @@ begin
     --------------------------------------------------------------------
     p_stimulus : process
     begin
-        wait for 200 ns;
+        wait for 900 ns;
         s_Sensor_S <= '1';
         
         s_Sensor_W <= '0';
-        wait for 300 ns;
+        wait for 500 ns;
              s_Sensor_S <= '0';
         
         s_Sensor_W <= '1';
