@@ -26,10 +26,10 @@ use ieee.numeric_std.all;
 ------------------------------------------------------------------------
 entity p_smart_traffic_fsm is
     port(
-        clk     : in  std_logic;
-        reset   : in  std_logic;
-        sensS   : in  std_logic;    -- sensor for South
-        sensW   : in  std_logic;    -- sensor fot West
+        clk         : in  std_logic;
+        reset       : in  std_logic;
+        Sensor_S    : in  std_logic;    -- sensor for South
+        Sensor_W    : in  std_logic;    -- sensor fot West
         -- Traffic lights (RGB LEDs) for two directions
         south_o : out std_logic_vector(3 - 1 downto 0);
         west_o  : out std_logic_vector(3 - 1 downto 0)
@@ -47,15 +47,17 @@ architecture Behavioral of p_smart_traffic_fsm is
                      WEST_WAIT,
                      STOP2,
                      SOUTH_GO,
-                     SOUTH_WAIT);
+                     SOUTH_WAIT,
+                     GO,
+                     STOP);
     -- Define the signal that uses different states
     signal s_state  : t_state;
 
     -- Internal clock enable
     signal s_en     : std_logic;
     --  sensors signas
-    signal s_sensS     : std_logic;
-    signal s_sensW     : std_logic;
+    signal s_Sensor_S     : std_logic;
+    signal s_Sensor_W     : std_logic;
     -- Local delay counter
     signal   s_cnt  : unsigned(5 - 1 downto 0);
 
@@ -98,20 +100,44 @@ begin
     begin
         if rising_edge(clk) then
             if (reset = '1') then       -- Synchronous reset
-                s_state <= STOP1 ;      -- Set initial state
+                s_state <= STOP ;      -- Set initial state
                 s_cnt   <= c_ZERO;      -- Clear all bits
-            
-                      
-            
-            
             elsif (s_en = '1') then
-                -- Every 250 ms, CASE checks the value of the s_state 
-                -- variable and changes to the next state according 
-                -- to the delay value.
                 case s_state is
-
-                    -- If the current state is STOP1, then wait 1 sec
-                    -- and move to the next GO_WAIT state.
+                    when STOP => 
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        elsif (s_Sensor_S = '0' and s_Sensor_W = '0') then -- No cars
+                            s_state <= GO;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '1' and s_Sensor_W = '0') then -- Cars from North
+                            s_state <= WEST_GO;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '1' and s_Sensor_W = '1') then -- Cars from East ane North
+                            s_state <= WEST_GO;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '0' and s_Sensor_W = '1') then -- Cars form East
+                            s_state <= SOUTH_GO;
+                            s_cnt   <= c_ZERO;
+                        end if;
+                        
+                    when GO => 
+                        if (s_cnt < c_DELAY_1SEC) then
+                            s_cnt <= s_cnt + 1;
+                        elsif (s_Sensor_S = '0' and s_Sensor_W = '0') then 
+                            s_state <= GO;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '1' and s_Sensor_W = '0') then 
+                            s_state <= SOUTH_WAIT;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '1' and s_Sensor_W = '1') then 
+                            s_state <= SOUTH_WAIT;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '0' and s_Sensor_W = '1') then 
+                            s_state <= WEST_WAIT;
+                            s_cnt   <= c_ZERO;
+                        end if;
+                         
                     when STOP1 =>
                         -- Count up to c_DELAY_1SEC
                         if (s_cnt < c_DELAY_1SEC) then
@@ -122,15 +148,21 @@ begin
                             -- Reset local counter value
                             s_cnt   <= c_ZERO;
                         end if;
-
+                        
                     when WEST_GO =>
-                        -- Count up to c_DELAY_4SEC
                         if (s_cnt < c_DELAY_4SEC) then
                             s_cnt <= s_cnt + 1;
-                        else
-                            -- Move to the next state
+                        elsif (s_Sensor_S = '0' and s_Sensor_W = '0') then 
+                            s_state <= GO;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '1' and s_Sensor_W = '0') then 
+                            s_state <= WEST_GO;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '1' and s_Sensor_W = '1') then 
                             s_state <= WEST_WAIT;
-                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '0' and s_Sensor_W = '1') then 
+                            s_state <= WEST_WAIT;
                             s_cnt   <= c_ZERO;
                         end if;
                     
@@ -157,13 +189,19 @@ begin
                         end if;
                         
                   when SOUTH_GO =>
-                        -- Count up to c_DELAY_4SEC
                         if (s_cnt < c_DELAY_4SEC) then
                             s_cnt <= s_cnt + 1;
-                        else
-                            -- Move to the next state
+                        elsif (s_Sensor_S = '0' and s_Sensor_W = '0') then 
+                            s_state <= GO;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '1' and s_Sensor_W = '0') then 
                             s_state <= SOUTH_WAIT;
-                            -- Reset local counter value
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '1' and s_Sensor_W = '1') then 
+                            s_state <= SOUTH_WAIT;
+                            s_cnt   <= c_ZERO;
+                        elsif (s_Sensor_S = '0' and s_Sensor_W = '1') then 
+                            s_state <= SOUTH_GO;
                             s_cnt   <= c_ZERO;
                         end if;
                         
