@@ -1,0 +1,30 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+Note: Stimulus process started
+Time: 0 ps  Iteration: 0  Process: /tb_p_t_ff_rst/p_stimulus  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 55 ns are not met
+Time: 205 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Note: Stimulus process finished
+Time: 210 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_stimulus  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 75 ns are not met
+Time: 225 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 75 ns are not met
+Time: 300 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 55 ns are not met
+Time: 355 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 55 ns are not met
+Time: 430 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 75 ns are not met
+Time: 525 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 75 ns are not met
+Time: 600 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 55 ns are not met
+Time: 655 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 55 ns are not met
+Time: 730 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 55 ns are not met
+Time: 805 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 55 ns are not met
+Time: 880 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd
+Error: Error - conditions in 55 ns are not met
+Time: 955 ns  Iteration: 0  Process: /tb_p_t_ff_rst/p_assert  File: C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/07-ffs/flip_flops/flip_flops.srcs/sim_1/new/tb_p_t_ff_rst.vhd

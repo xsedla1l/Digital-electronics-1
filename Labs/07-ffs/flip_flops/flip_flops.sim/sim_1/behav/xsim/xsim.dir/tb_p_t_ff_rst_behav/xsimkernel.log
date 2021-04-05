@@ -2,3 +2,6 @@ Running: xsim.dir/tb_p_t_ff_rst_behav/xsimk.exe -simmode gui -wdb tb_p_t_ff_rst_
 Design successfully loaded
 Design Loading Memory Usage: 6364 KB (Peak: 6364 KB)
 Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 6940 KB (Peak: 6940 KB)
+Simulation CPU Usage: 46 ms
