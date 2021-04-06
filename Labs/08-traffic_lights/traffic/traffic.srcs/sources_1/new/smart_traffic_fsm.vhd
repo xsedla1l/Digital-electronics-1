@@ -100,64 +100,68 @@ begin
                  
                       case s_state is
                     
-                      when WEST_GO =>
-                            if (s_cnt < c_DELAY_4SEC) then
-                                s_cnt <= s_cnt + 1;
-                            else
-                                s_state <= WEST_WAIT;
-                                s_cnt   <= c_ZERO;
-                            end if;
-                      when WEST_WAIT =>
-                            if (s_cnt < c_DELAY_2SEC) then
-                                s_cnt <= s_cnt + 1;
-                            else
-                                s_state <= STOP2;
-                                s_cnt   <= c_ZERO;
-                            end if;                            
-                      when STOP2 =>
-                            if (s_cnt < c_DELAY_1SEC) then
-                                s_cnt <= s_cnt + 1;
-                            else
+                          when WEST_GO =>
+                                if (s_cnt < c_DELAY_4SEC) then
+                                    s_cnt <= s_cnt + 1;
+                                else
+                                    s_state <= WEST_WAIT;
+                                    s_cnt   <= c_ZERO;
+                                end if;
+                          when WEST_WAIT =>
+                                if (s_cnt < c_DELAY_2SEC) then
+                                    s_cnt <= s_cnt + 1;
+                                else
+                                    s_state <= STOP2;
+                                    s_cnt   <= c_ZERO;
+                                end if;                            
+                          when STOP2 =>
+                                if (s_cnt < c_DELAY_1SEC) then
+                                    s_cnt <= s_cnt + 1;
+                                else
+                                    s_state <= SOUTH_GO;
+                                    s_cnt   <= c_ZERO;
+                                end if; 
+                          when others =>
                                 s_state <= SOUTH_GO;
-                                s_cnt   <= c_ZERO;
-                            end if;                       
+                                                  
                       end case;
                                               
                    
                     
                     
                  elsif ((Sensor_S_i = '0') and (Sensor_W_i = '1')) then 
---                        if (s_state = SOUTH_GO) then   
---                      case s_state is
---                        when SOUTH_GO =>
---                            if (s_cnt < c_DELAY_4SEC) then
---                                s_cnt <= s_cnt + 1;
---                            else
---                                s_state <= SOUTH_WAIT;
---                                s_cnt   <= c_ZERO;
---                            end if;
---                        when SOUTH_WAIT =>
---                                if (s_cnt < c_DELAY_2SEC) then
---                                s_cnt <= s_cnt + 1;
---                            else
---                                s_state <= STOP1;
---                                s_cnt   <= c_ZERO;
---                            end if;
-                            
---                       when STOP1 =>
---                            if (s_cnt < c_DELAY_1SEC) then
---                                s_cnt <= s_cnt + 1;
---                            else
---                                s_state <= WEST_GO;
---                                s_cnt   <= c_ZERO;
---                            end if;
---                      end case
+                           
+                      case s_state is
                       
---                    else 
-                      s_state <= WEST_GO;     
---                    end if;
-                    
-                       
+                            when SOUTH_GO =>
+                                if (s_cnt < c_DELAY_4SEC) then
+                                    s_cnt <= s_cnt + 1;
+                                else
+                                    s_state <= SOUTH_WAIT;
+                                    s_cnt   <= c_ZERO;
+                                end if;
+                            when SOUTH_WAIT =>
+                                if (s_cnt < c_DELAY_2SEC) then
+                                    s_cnt <= s_cnt + 1;
+                                else
+                                    s_state <= STOP1;
+                                    s_cnt   <= c_ZERO;
+                                end if;
+                                
+                            when STOP1 =>
+                                if (s_cnt < c_DELAY_1SEC) then
+                                    s_cnt <= s_cnt + 1;
+                                else
+                                    s_state <= WEST_GO;
+                                    s_cnt   <= c_ZERO;
+                                end if;
+                                
+                            when others =>
+                                s_state <= WEST_GO;   
+                      end case;                     
+                 
+                                         
+                                           
                  elsif ((Sensor_S_i = '0') and (Sensor_W_i = '0')) then 
                        s_state <= s_state;
                  

@@ -43,8 +43,8 @@ architecture Behavioral of tb_smart_traffic_fsm is
     signal s_reset      : std_logic;
     signal s_south      : std_logic_vector(3 - 1 downto 0);
     signal s_west       : std_logic_vector(3 - 1 downto 0);
-    signal s_Sensor_S_i   : std_logic;
-    signal s_Sensor_W_i   : std_logic;
+    signal s_Sensor_S   : std_logic;
+    signal s_Sensor_W   : std_logic;
 begin
          uut_smart_traffic_fsm : entity work.smart_traffic_fsm
         port map(
@@ -88,20 +88,30 @@ begin
     --------------------------------------------------------------------
     p_stimulus : process
     begin
-        wait for 900 ns;
-        s_Sensor_S_i <= '1';
         
-        s_Sensor_W_i <= '0';
-        wait for 1200 ns;
-             s_Sensor_S_i <= '0';
+        s_Sensor_S <= '1';        
+        s_Sensor_W <= '1';
         
-        s_Sensor_W_i <= '1';
         wait for 1200 ns;
-        s_Sensor_S_i <= '1';
-        s_Sensor_W_i <= '1';
-        wait for 1500 ns;
-        s_Sensor_S_i <= '0';
-        s_Sensor_W_i <= '0';
+        
+        s_Sensor_S <= '1';        
+        s_Sensor_W <= '0';
+        
+        wait for 2000 ns;
+        
+        s_Sensor_S <= '0';        
+        s_Sensor_W <= '1';
+        
+        wait for 2000 ns;
+        
+        s_Sensor_S <= '0';
+        s_Sensor_W <= '0';
+        
+        wait for 2000 ns;
+        
+        s_Sensor_S <= '1';
+        s_Sensor_W <= '1';
+        
         wait;
     end process p_stimulus;
 

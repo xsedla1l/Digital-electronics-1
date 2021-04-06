@@ -1,8 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/08-traffic_lights/traffic/traffic.srcs/sources_1/new/smart_traffic_fsm.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'smart_traffic_fsm'
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/08-traffic_lights/traffic/traffic.srcs/sim_1/new/tb_smart_traffic_fsm.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'tb_smart_traffic_fsm'
-ERROR: [VRFC 10-2989] 's_sensor_s' is not declared [C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/08-traffic_lights/traffic/traffic.srcs/sim_1/new/tb_smart_traffic_fsm.vhd:55]
-ERROR: [VRFC 10-2989] 's_sensor_w' is not declared [C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/08-traffic_lights/traffic/traffic.srcs/sim_1/new/tb_smart_traffic_fsm.vhd:56]
-ERROR: [VRFC 10-3782] unit 'behavioral' ignored due to previous errors [C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/08-traffic_lights/traffic/traffic.srcs/sim_1/new/tb_smart_traffic_fsm.vhd:38]
-INFO: [VRFC 10-3070] VHDL file 'C:/Users/marek/Desktop/skola/4semester/DE1/Digital-electronics-1/Labs/08-traffic_lights/traffic/traffic.srcs/sim_1/new/tb_smart_traffic_fsm.vhd' ignored due to errors
