@@ -150,9 +150,13 @@ p_output_fsm : process(s_state)
 ## A) State table 
 | **.** | **STOP1** | **WEST_GO** | **WEST_WAIT** | **STOP2** | **SOUTH_GO** | **SOUTH_WAIT** |
 | :-- | :-: | :-: | :-: | :-: | :-: | :-: |
-| `CLK`      | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) | ![rising](Images/eq_uparrow.png) |
-| `WEST`        | RED `100` | GREEN `010` | YELLOW `110` | RED `100` | RED `100` | RED `100` |
-| `SOUTH`       | RED `100` | RED `100` | RED `100` | RED `100` | GREEN `010` | YELLOW `110` |
+| `DELAY`      | 1 sec | 4 sec | 2 sec | 1 sec | 4 sec | 2 sec |
+| `DIRECTION WEST`        | RED `100` | GREEN `010` | YELLOW `110` | RED `100` | RED `100` | RED `100` |
+| `DIRECTION SOUTH`       | RED `100` | RED `100` | RED `100` | RED `100` | GREEN `010` | YELLOW `110` |
+| `00`      | STOP1 | WEST_GO | WEST_WAIT | STOP2 | SOUTH_GO | SOUTH_WAIT |
+| `01`      | WEST_GO | WEST_GO | WEST_GO | WEST_GO | SOUTH_WAIT | STOP1 |
+| `10`      | SOUTH_GO | WEST_WAIT | STOP2 | SOUTH_GO | SOUTH_GO | SOUTH_GO |
+| `11`      | WEST_GO | WEST_WAIT | STOP2 | SOUTH_GO | SOUTH_WAIT | STOP1 |
 
 
 ## B) State table
