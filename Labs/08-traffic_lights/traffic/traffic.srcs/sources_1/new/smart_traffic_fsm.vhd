@@ -28,33 +28,27 @@ entity smart_traffic_fsm is
     port(
         clk     : in  std_logic;
         reset   : in  std_logic;
-        Sensor_S : in std_logic;
-        Sensor_W : in std_logic;
+        Sensor_S_i : in std_logic;
+        Sensor_W_i : in std_logic;
         -- Traffic lights (RGB LEDs) for two directions
         south_o : out std_logic_vector(3 - 1 downto 0);
         west_o  : out std_logic_vector(3 - 1 downto 0)
     );
 end entity smart_traffic_fsm;
 
-------------------------------------------------------------------------
--- Architecture declaration for traffic light controller
-------------------------------------------------------------------------
 architecture Behavioral of smart_traffic_fsm is
 
-    -- Define the states
     type t_state is (STOP1,
                      WEST_GO,
                      WEST_WAIT,
                      STOP2,
                      SOUTH_GO,
                      SOUTH_WAIT);
-    -- Define the signal that uses different states
-    signal s_state  : t_state;
 
-    -- Internal clock enable
+    signal s_state  : t_state;
     signal s_en           : std_logic;
-    signal s_Sensor_S     : std_logic;
-    signal s_Sensor_W     : std_logic;
+    signal s_Sensor_S_i     : std_logic;
+    signal s_Sensor_W_i    : std_logic;
     -- Local delay counter
     signal   s_cnt  : unsigned(5 - 1 downto 0);
 
@@ -101,94 +95,155 @@ begin
                 s_cnt   <= c_ZERO;      -- Clear all bits
 
             elsif (s_en = '1') then
-                -- Every 250 ms, CASE checks the value of the s_state 
-                -- variable and changes to the next state according 
-                -- to the delay value.
-                case s_state is
-
-                    -- If the current state is STOP1, then wait 1 sec
-                    -- and move to the next GO_WAIT state.
-                    when STOP1 =>
-                        -- Count up to c_DELAY_1SEC
-                        if (s_cnt < c_DELAY_1SEC) then
-                            s_cnt <= s_cnt + 1;
-                            
-                        elsif (s_Sensor_S = '1' and s_Sensor_W = '0') then 
-                            s_state <= SOUTH_GO;
-                            s_cnt   <= c_ZERO;
-                        else
-                            -- Move to the next state
-                            s_state <= WEST_GO;
-                            -- Reset local counter value
-                            s_cnt   <= c_ZERO;
-                        end if;
-
-                    when WEST_GO =>
-                        -- Count up to c_DELAY_4SEC
-                        if (s_cnt < c_DELAY_4SEC) then
-                            s_cnt <= s_cnt + 1;
-                        else
-                            -- Move to the next state
-                            s_state <= WEST_WAIT;
-                            -- Reset local counter value
-                            s_cnt   <= c_ZERO;
-                        end if;
+            
+                if ((Sensor_S_i = '1') and (Sensor_W_i = '0')) then
+                 
+                      case s_state is
                     
-                    when WEST_WAIT =>
-                        -- Count up to c_DELAY_2SEC
-                        if (s_cnt < c_DELAY_2SEC) then
-                            s_cnt <= s_cnt + 1;
-                        else
-                            -- Move to the next state
-                            s_state <= STOP2;
-                            -- Reset local counter value
-                            s_cnt   <= c_ZERO;
-                        end if;
-                        
-                   when STOP2 =>
-                        -- Count up to c_DELAY_1SEC
-                        if (s_cnt < c_DELAY_1SEC) then
-                            s_cnt <= s_cnt + 1;
-                        
-                        elsif (s_Sensor_S = '0' and s_Sensor_W = '1') then 
-                            s_state <= WEST_GO;
-                            s_cnt   <= c_ZERO;
+                      when WEST_GO =>
+                            if (s_cnt < c_DELAY_4SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                s_state <= WEST_WAIT;
+                                s_cnt   <= c_ZERO;
+                            end if;
+                      when WEST_WAIT =>
+                            if (s_cnt < c_DELAY_2SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                s_state <= STOP2;
+                                s_cnt   <= c_ZERO;
+                            end if;                            
+                      when STOP2 =>
+                            if (s_cnt < c_DELAY_1SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                s_state <= SOUTH_GO;
+                                s_cnt   <= c_ZERO;
+                            end if;                       
+                      end case;
+                                              
+                   
+                    
+                    
+                 elsif ((Sensor_S_i = '0') and (Sensor_W_i = '1')) then 
+--                        if (s_state = SOUTH_GO) then   
+--                      case s_state is
+--                        when SOUTH_GO =>
+--                            if (s_cnt < c_DELAY_4SEC) then
+--                                s_cnt <= s_cnt + 1;
+--                            else
+--                                s_state <= SOUTH_WAIT;
+--                                s_cnt   <= c_ZERO;
+--                            end if;
+--                        when SOUTH_WAIT =>
+--                                if (s_cnt < c_DELAY_2SEC) then
+--                                s_cnt <= s_cnt + 1;
+--                            else
+--                                s_state <= STOP1;
+--                                s_cnt   <= c_ZERO;
+--                            end if;
                             
-                        else
-                            -- Move to the next state
-                            s_state <= SOUTH_GO;
-                            -- Reset local counter value
-                            s_cnt   <= c_ZERO;
-                        end if;
+--                       when STOP1 =>
+--                            if (s_cnt < c_DELAY_1SEC) then
+--                                s_cnt <= s_cnt + 1;
+--                            else
+--                                s_state <= WEST_GO;
+--                                s_cnt   <= c_ZERO;
+--                            end if;
+--                      end case
+                      
+--                    else 
+                      s_state <= WEST_GO;     
+--                    end if;
+                    
+                       
+                 elsif ((Sensor_S_i = '0') and (Sensor_W_i = '0')) then 
+                       s_state <= s_state;
+                 
+                 elsif ((Sensor_S_i = '1') and (Sensor_W_i = '1')) then 
+                            
+                    case s_state is
+    
+                        when STOP1 =>
+                            -- Count up to c_DELAY_1SEC
+                            if (s_cnt < c_DELAY_1SEC) then
+                                s_cnt <= s_cnt + 1;                                                            
+                            else
+                                -- Move to the next state
+                                s_state <= WEST_GO;
+                                -- Reset local counter value
+                                s_cnt   <= c_ZERO;
+                            end if;
+    
+                        when WEST_GO =>
+                            -- Count up to c_DELAY_4SEC
+                            if (s_cnt < c_DELAY_4SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                -- Move to the next state
+                                s_state <= WEST_WAIT;
+                                -- Reset local counter value
+                                s_cnt   <= c_ZERO;
+                            end if;
                         
-                  when SOUTH_GO =>
-                        -- Count up to c_DELAY_4SEC
-                        if (s_cnt < c_DELAY_4SEC) then
-                            s_cnt <= s_cnt + 1;
-                        else
-                            -- Move to the next state
-                            s_state <= SOUTH_WAIT;
-                            -- Reset local counter value
-                            s_cnt   <= c_ZERO;
-                        end if;
-                        
-                  when SOUTH_WAIT =>
-                        -- Count up to c_DELAY_2SEC
-                        if (s_cnt < c_DELAY_2SEC) then
-                            s_cnt <= s_cnt + 1;
-                        else
-                            -- Move to the next state
+                        when WEST_WAIT =>
+                            -- Count up to c_DELAY_2SEC
+                            if (s_cnt < c_DELAY_2SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                -- Move to the next state
+                                s_state <= STOP2;
+                                -- Reset local counter value
+                                s_cnt   <= c_ZERO;
+                            end if;
+                            
+                       when STOP2 =>
+                            -- Count up to c_DELAY_1SEC
+                            if (s_cnt < c_DELAY_1SEC) then
+                                s_cnt <= s_cnt + 1;
+                            
+                                                       
+                            else
+                                -- Move to the next state
+                                s_state <= SOUTH_GO;
+                                -- Reset local counter value
+                                s_cnt   <= c_ZERO;
+                            end if;
+                            
+                      when SOUTH_GO =>
+                            -- Count up to c_DELAY_4SEC
+                            if (s_cnt < c_DELAY_4SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                -- Move to the next state
+                                s_state <= SOUTH_WAIT;
+                                -- Reset local counter value
+                                s_cnt   <= c_ZERO;
+                            end if;
+                            
+                      when SOUTH_WAIT =>
+                            -- Count up to c_DELAY_2SEC
+                            if (s_cnt < c_DELAY_2SEC) then
+                                s_cnt <= s_cnt + 1;
+                            else
+                                -- Move to the next state
+                                s_state <= STOP1;
+                                -- Reset local counter value
+                                s_cnt   <= c_ZERO;
+                            end if;                      
+                        -- It is a good programming practice to use the 
+                        -- OTHERS clause, even if all CASE choices have 
+                        -- been made. 
+                        when others =>
                             s_state <= STOP1;
-                            -- Reset local counter value
-                            s_cnt   <= c_ZERO;
-                        end if;                      
-                    -- It is a good programming practice to use the 
-                    -- OTHERS clause, even if all CASE choices have 
-                    -- been made. 
-                    when others =>
-                        s_state <= STOP1;
-
+                            
+                 
+                        
+               
                 end case;
+             
+                end if;
             end if; -- Synchronous reset
         end if; -- Rising edge
     end process p_smart_traffic_fsm;
