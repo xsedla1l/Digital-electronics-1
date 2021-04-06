@@ -156,7 +156,7 @@ p_output_fsm : process(s_state)
 
 
 ## B) State table
-![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/08-traffic_lights/Images/image3.png)
+![alt text](https://github.com/xsedla1l/Digital-electronics-1/blob/main/Labs/08-traffic_lights/Images/image4.jpg)
 
 ## C) Listing of VHDL code of sequential process p_p_smart_traffic_fsm
 ```VHDL
